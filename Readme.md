@@ -1,8 +1,8 @@
-# Delete unused assets
+# Contentful - Delete unused assets -
 
 This is an example script for deleting assets that aren't linked in your content model. It does this by walking through all assets and checking for any links back to them.
 
-WARNING: This script does not take into account assets that are only linked inside of Text fields. If you primarily embed images directly using the markdown editor, this will very likely delete assets you depend on.
+⚠️ WARNING: This script does not take into account assets that are only linked inside of Text fields. If you primarily embed images directly using the markdown editor, this will very likely delete assets you depend on.
 
 You must fill in your own CMA access token, space ID & the Environment ID in the .env before runnning.
 
@@ -19,3 +19,4 @@ ENVIRONMENT_ID=XXXX
 npm install && npm run cleanup-assets
 ```
 
+Use with caution.

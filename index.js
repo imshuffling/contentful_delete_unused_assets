@@ -58,15 +58,15 @@ async function maybeDeleteAsset(environment, assetLinkFields, asset) {
   });
 
   if (!referencesToAsset.items.length > 0) {
-    console.log("DELETE", id, asset.fields.title);
-    
+    console.log("\x1b[41m%s\x1b[0m" ,"🗑️  DELETE Asset", id, asset.fields.title);
+
     // No links to this asset from the selected field, safe to delete
     if (asset.sys.publishedVersion) {
       asset = await asset.unpublish(asset.sys.id);
     }
     await asset.delete(asset.sys.id);
   } else {
-    console.log("KEEP", id, asset.fields.title);
+    console.log("\x1b[32m%s\x1b[0m" ,"👌 KEEP Asset", id, asset.fields.title);
   }
 }
 
